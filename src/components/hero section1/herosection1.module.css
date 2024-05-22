@@ -1,0 +1,121 @@
+.Herosectiondiv {
+  height: 490px;
+  width: 100vw;
+  background: rgb(235, 242, 255);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  /* position: relative; */
+}
+
+.leftsidediv {
+  height: 350px;
+  width: 48vw;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  margin-top: 20px;
+}
+.rightsidediv {
+  height: 400px;
+  width: 40vw;
+  /* border: 1px solid red; */
+}
+
+.doctorimg {
+  height: 380px;
+}
+
+.centersword {
+  font-size: 60px;
+  font-weight: 900;
+  color: #2aa8ff;
+}
+
+.card {
+  width: 85vw;
+  height: 330px;
+  border: 1px solid #f0f0f0;
+  position: absolute;
+  left: 83px;
+  top: 348px;
+  border-radius: 15px;
+  background-color: #f0f0f0;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 38px 0px 44px 82px;
+  background: #f0f0f0;
+}
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+.search {
+  height: 42px;
+  width: 260px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.search::-webkit-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: #abb6c7;
+}
+
+.search::-moz-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: #abb6c7;
+}
+
+.search:-ms-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: #abb6c7;
+}
+
+.iconsdiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.iconimg {
+  height: 50px;
+  width: 50px;
+}
+
+.icontextdiv {
+  width: 100px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 90px;
+}
+
+.icontextdiv > span {
+  color: #abb6c7;
+  font-weight: 400;
+  font-size: 14px;
+}

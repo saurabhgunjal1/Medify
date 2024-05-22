@@ -1,0 +1,61 @@
+.newsdiv {
+  width: 94vw;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  margin-top: 80px;
+}
+
+.newsdiv > span {
+  font-size: 20px;
+  color: #2aa7ff;
+  font-weight: 600;
+}
+
+.newsdiv > h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #1b3c74;
+  margin: 0;
+}
+
+.cardstopdiv {
+  width: 90vw;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+}
+.cardsdiv {
+  width: 310px;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  align-items: start;
+}
+
+.detoximg {
+  width: 310px;
+  height: 250px;
+}
+
+.cardsdiv > h4 {
+  text-align: start;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  color: #1b3c74;
+}
+
+.lastspan {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+
+  text-align: left;
+  margin-left: 15px;
+}

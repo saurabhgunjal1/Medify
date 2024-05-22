@@ -1,0 +1,205 @@
+.bluebackgrounddiv {
+  height: 70px;
+  width: 100vw;
+  background: linear-gradient(91.75deg, #2aa7ff 1.4%, #0c8ce6 100.57%);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.searchmaindiv {
+  margin-bottom: 10px;
+}
+
+.searchbar {
+  display: flex;
+  height: 90px;
+  width: 90vw;
+  z-index: 10;
+  position: relative;
+  justify-content: space-evenly;
+  margin: 0px 0px 0px 50px;
+  background: #f0f0f0;
+  align-items: center;
+  /* border: 1px solid yellow; */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  top: 29px;
+}
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+.search {
+  height: 42px;
+  width: 260px;
+  border: 0.5px solid rgb(203, 202, 202);
+  outline: none;
+  border-radius: 10px;
+}
+
+.search::-webkit-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: #abb6c7;
+}
+
+.search::-moz-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: #abb6c7;
+}
+
+.search:-ms-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: #abb6c7;
+}
+.topsearchresultdiv {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: space-around;
+  /* border: 1px solid rgb(255, 82, 47); */
+  background: rgb(235, 242, 255);
+}
+.searchresultdiv {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 1px solid rgb(255, 82, 47); */
+  background: rgb(235, 242, 255);
+}
+
+.searchresultdiv > h2 {
+  margin-top: 55px;
+}
+
+.searchresult {
+  height: auto;
+  width: 64vw;
+  /* border: 1px solid rgb(47, 255, 165); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 50px; */
+  background: rgb(235, 242, 255);
+}
+.searchresult > span {
+  display: flex;
+  align-items: center;
+}
+
+.searchresultdetaildiv {
+  height: 185px;
+  width: 55vw;
+  /* border: 1px solid violet; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  margin-top: 30px;
+}
+
+.searchresultdetaildivimgdiv {
+  height: 185px;
+  width: 11vw;
+  /* border: 1px solid violet; */
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: start;
+}
+
+.searchresultdetaildiv2 {
+  height: 185px;
+  width: 26vw;
+  /* border: 1px solid violet; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.searchresultdetaildiv2 > h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #14bef0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.searchresultdetaildiv2 > h5 {
+  margin: 0;
+}
+.searchresultdetaildiv2 > p {
+  margin: 0px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #414146;
+  margin-top: 5px;
+  text-align: start;
+}
+.searchresultdetaildiv2 > p > span {
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 900;
+  color: #02a401;
+  /* margin-right: 10px; */
+}
+
+.span500 {
+  margin: 0px;
+  font-size: 11px;
+  font-weight: 100 !important;
+  color: #9a9a9a !important;
+  text-decoration: line-through;
+  /* margin-right: 10px; */
+}
+.searchresultdetaildiv3 {
+  height: 185px;
+  width: 16vw;
+  /* border: 1px solid violet; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.searchresultdetaildiv3 > h3 {
+  color: #02a401;
+}
+
+.searchresultrightdiv {
+  height: fit-content;
+  width: 30vw;
+  display: flex;
+  /* border: 1px solid greenyellow; */
+  justify-content: end;
+  align-items: end;
+}
+
+.searchresultrightdiv > img {
+  /* position: relative; */
+  margin-top: 120px;
+  height: 230px;
+  width: 325px !important;
+  width: fit-content;
+}

@@ -1,0 +1,28 @@
+.swiperdiv {
+  /* margin-top: 145px; */
+  height: 202px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 2;
+  display: flex !important;
+  top: 190px !important;
+  width: 90vw;
+  height: 200px !important;
+}
+
+.swiperimg {
+  width: 343px;
+  height: 169px;
+}
+
+.swiper-pagination {
+  top: 175px;
+  position: absolute;
+  left: 0;
+  background: rgb(196, 226, 226);
+  width: 100%;
+}

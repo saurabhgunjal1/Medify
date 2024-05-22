@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+}
+
+.playstorediv {
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+
+  height: 500px;
+  width: 94vw;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.playstorediv > img {
+  width: 90vw;
+  height: 450px;
+}
+
+.footerdiv {
+  height: 500px;
+  width: 94vw;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 165px;
+}
+
+.footerdiv > img {
+  width: 90vw;
+  /* height: 450px; */
+}

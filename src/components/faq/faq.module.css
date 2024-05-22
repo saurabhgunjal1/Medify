@@ -1,0 +1,60 @@
+.faqdiv {
+  width: 94vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* border: 1px solid blue; */
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.faqdiv > h1 {
+  font-weight: 800;
+  color: #1b3c74;
+  margin: 0;
+}
+.faqdiv > h6 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1b3c74;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.leftdiv {
+  width: 47vw;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid rgb(91, 91, 160); */
+}
+
+.leftdiv > img {
+  width: 45vw;
+  height: 420px;
+}
+
+.rightdiv {
+  width: 47vw;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rgb(91, 91, 160); */
+}
+
+.faqdivsss {
+  /* width: 47vw;
+  height: 400px; */
+  display: flex;
+  align-items: center;
+  /* border: 1px solid rgb(91, 91, 160); */
+}
+
+.accordianfont {
+  font-size: 17px;
+  color: #1b3c74;
+  font-weight: 600;
+}

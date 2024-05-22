@@ -1,0 +1,111 @@
+.patientcaringdiv {
+  height: 430px;
+  width: 100vw;
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* margin-left: 50px;
+  margin-right: auto; */
+}
+
+.patientleftdiv {
+  height: 400px;
+  width: 45vw;
+  /* border: 1px solid orange; */
+}
+.freeconsultation {
+  display: flex;
+  align-items: center;
+  height: 83px;
+  width: 200px;
+}
+
+.consultation {
+  border: 5px 0px 0px 0px;
+  opacity: 0px;
+  display: flex;
+  position: relative;
+  /* bottom: 33px; */
+  left: 64px;
+  top: 51px;
+  z-index: 10;
+}
+
+.patientimage1 {
+  width: 220px;
+  height: 215px;
+  border: 5px 0px 0px 0px;
+  opacity: 0px;
+  display: flex;
+  position: relative;
+  bottom: 132px;
+  left: 296px;
+}
+.patientimage2 {
+  width: 220px;
+  height: 215px;
+  border: 5px 0px 0px 0px;
+  opacity: 0px;
+  display: flex;
+  position: relative;
+  bottom: 189px;
+  left: 232px;
+}
+
+.contentrightdiv {
+  height: 400px;
+  width: 45vw;
+  /* border: 1px solid orange; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.contentrightdiv h3 {
+  color: #2aa7ff;
+  margin-bottom: 0px;
+}
+
+.contentrightdiv h1 {
+  color: #1b3c74;
+  margin-bottom: 1px;
+  margin-top: 10px;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.contentrightdiv h1 > span {
+  font-size: 45px;
+  font-weight: 700;
+  color: #2aa7ff;
+}
+.contentrightdiv p {
+  text-align: start;
+  color: #77829d;
+}
+
+.contentrightdiv ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.contentrightdiv ul li {
+  margin: 5px 0;
+  color: #1b3c74;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.contentrightdiv ul li::before {
+  content: "✔️";
+  margin-right: 10px;
+  color: #007bff;
+}

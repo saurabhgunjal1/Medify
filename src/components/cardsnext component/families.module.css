@@ -1,0 +1,65 @@
+.familiesdiv {
+  width: 94vw;
+  height: 500px;
+  /* border: 1px solid blueviolet; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+  margin-left: 50px;
+}
+
+.familiesleftdiv {
+  width: 47vw;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  /* border: 1px solid rgb(226, 43, 189); */
+}
+
+.familiesleftdiv > h5 {
+  color: #2aa7ff;
+}
+.familiesleftdiv > h1 {
+  margin: 0;
+  color: #1b3c74;
+  font-weight: 900;
+  font-size: 40px;
+}
+.familiesleftdiv > p {
+  color: #77829d;
+  text-align: start;
+}
+
+.familiesrightdiv {
+  width: 47vw;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rgb(34, 6, 34); */
+}
+
+.familiescard {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 150px;
+  row-gap: 50px;
+}
+.familiescardindiv {
+  /* border: 1px solid rgb(43, 61, 226); */
+  background-color: #ffffff;
+}
+
+.familiescardindiv > h1 {
+  margin: 0;
+}

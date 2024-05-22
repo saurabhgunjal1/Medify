@@ -1,0 +1,46 @@
+.button {
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #2aa8ff;
+  width: 130px;
+  height: 40px;
+}
+
+.secondary {
+  width: 177px;
+  height: 40px;
+  background-color: #2aa8ff;
+}
+
+.navbtn {
+  background: #2aa8ff;
+  width: 130px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.herobtn {
+  background: #2aa8ff;
+  width: 145px;
+  height: 45px;
+  /* margin-left: 5px; */
+}
+
+.searchbtn {
+  width: 145px;
+  height: 41px;
+  background: #2aa8ff;
+}
+
+.searchresultbtn {
+  width: 200px;
+  height: 41px;
+  background: #2aa8ff;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}

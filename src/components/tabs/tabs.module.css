@@ -1,0 +1,70 @@
+.tabbox {
+  height: 270px;
+  width: 670px;
+  margin-left: 52px;
+  border: 1px solid rgb(55, 255, 0);
+}
+.tabboxhed {
+  height: 70px;
+  border: 1px solid red;
+  width: 670px;
+
+  margin-left: -1px;
+}
+
+.css-8atqhb {
+  width: 54%;
+}
+.tabsheaddiv {
+  width: 150px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid yellow; */
+  justify-content: center;
+}
+
+.tabsheaddiv > h4 {
+  color: rgb(49, 49, 49);
+  margin: 0;
+}
+
+.tabsheaddiv > span {
+  font-weight: 400;
+  font-size: 12px;
+  color: #01a400;
+}
+
+.tappanelcolomndivtop {
+  height: 150px;
+  width: 664px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tappanelcolomndiv {
+  width: 664px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tappanelcolomndiv > span {
+  border: 2px solid #2aa7ff;
+  color: #2aa7ff;
+  cursor: pointer;
+}
+
+/* .gridcontainer {
+  margin-top: 0;
+  padding-top: 0;
+  /* margin-bottom: 20px; */
+
+.css-19kzrtu {
+  padding: 0px !important;
+}
+
+.MuiBox-root {
+  padding: 0px !important;
+}

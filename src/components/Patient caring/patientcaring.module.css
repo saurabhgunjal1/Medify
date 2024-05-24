@@ -26,8 +26,6 @@
 }
 
 .consultation {
-  border: 5px 0px 0px 0px;
-  opacity: 0px;
   display: flex;
   position: relative;
   /* bottom: 33px; */
@@ -39,8 +37,7 @@
 .patientimage1 {
   width: 220px;
   height: 215px;
-  /* border: 5px 0px 0px 0px; */
-  /* opacity: 0px; */
+
   display: flex;
   position: relative;
   bottom: 132px;
@@ -49,8 +46,7 @@
 .patientimage2 {
   width: 220px;
   height: 215px;
-  border: 5px 0px 0px 0px;
-  opacity: 0px;
+
   display: flex;
   position: relative;
   bottom: 189px;

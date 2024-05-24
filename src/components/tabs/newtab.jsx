@@ -1,22 +1,21 @@
-import * as React from 'react';
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import styles from "./tabs.module.css";
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Unstable_Grid2';
-import { styled } from '@mui/material/styles';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Unstable_Grid2";
+import { styled } from "@mui/material/styles";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
 
 // Function to generate dates starting from today
 const generateDates = (numDays) => {
     const dates = [];
     const today = new Date();
-    dates.push(today);
     for (let i = 0; i < numDays; i++) {
         const date = new Date(today);
         date.setDate(today.getDate() + i);
@@ -27,7 +26,7 @@ const generateDates = (numDays) => {
 
 // Format date as desired
 const formatDate = (date) => {
-    const options = { weekday: 'short', day: 'numeric', month: 'short' };
+    const options = { weekday: "short", day: "numeric", month: "short" };
     return date.toLocaleDateString(undefined, options);
 };
 
@@ -36,15 +35,15 @@ const generateTimeSlots = () => {
     return {
         morning: ["11:30 AM"],
         afternoon: ["12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM"],
-        evening: ["6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM"]
+        evening: ["6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM"],
     };
 };
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
     padding: theme.spacing(1),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
 }));
 
@@ -77,32 +76,43 @@ CustomTabPanel.propTypes = {
 function a11yProps(index) {
     return {
         id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
+        "aria-controls": `simple-tabpanel-${index}`,
     };
 }
 
-export default function BasicTabs({ onDateChange, onTimeChange, setSelectedTime, selectedTime }) {
-    const [value, setValue] = useState(0);
-    // const [selectedTime, setSelectedTime] = useState(null);
+export default function BasicTabs({
+    setSelectedDate,
+    setSelectedTime,
+    selectedTime,
+}) {
     const dates = generateDates(7); // Generate 7 dates starting from today
+    const [value, setValue] = useState(0); // Index to track the selected tab
+    const [selectedDateInternal, setSelectedDateInternal] = useState(dates[0]); // Initialize selectedDate with the first date
+
+    useEffect(() => {
+        setSelectedDate(dates[0]); // Set initial selected date in parent component
+    }, []);
+
     const timeSlots = generateTimeSlots(); // Get the time slots
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
-        onDateChange(dates[newValue]); // Pass the selected date to the parent component
+        const newSelectedDate = dates[newValue];
+        setSelectedDateInternal(newSelectedDate);
+        setSelectedDate(newSelectedDate); // Update selected date in the parent component
         setSelectedTime(null); // Reset the selected time when date changes
-
     };
 
     const handleTimeClick = (time) => {
         setSelectedTime(time);
-        console.log(selectedTime)
-        onTimeChange(time); // Pass the selected time to the parent component
     };
 
     return (
-        <Box sx={{ width: '100%' }} className={styles.tabbox}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className={styles.tabboxhed}>
+        <Box sx={{ width: "100%" }} className={styles.tabbox}>
+            <Box
+                sx={{ borderBottom: 1, borderColor: "divider" }}
+                className={styles.tabboxhed}
+            >
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -114,7 +124,10 @@ export default function BasicTabs({ onDateChange, onTimeChange, setSelectedTime,
                         <Tab
                             key={index}
                             label={
-                                <div className={styles.tabsheaddiv}>
+                                <div
+                                    className={`${styles.tabsheaddiv} ${selectedDateInternal === date ? styles.selected : ""
+                                        }`}
+                                >
                                     <h4>{formatDate(date)}</h4>
                                     <span>11 Slots Available</span>
                                 </div>
@@ -128,17 +141,27 @@ export default function BasicTabs({ onDateChange, onTimeChange, setSelectedTime,
             {dates.map((date, index) => (
                 <CustomTabPanel key={index} value={value} index={index}>
                     <Box sx={{ flexGrow: 1 }} className={styles.gridcontainer}>
-                        <Grid container spacing={1}>
+                        <Grid container spacing={0}>
                             {Object.entries(timeSlots).map(([timePeriod, slots]) => (
                                 <Grid xs={12} key={timePeriod}>
-                                    <Item>
+                                    <Item className={styles.gridcss}>
                                         <Stack direction="row" spacing={1}>
-                                            <Chip label={timePeriod.charAt(0).toUpperCase() + timePeriod.slice(1)} />
+                                            <Chip
+                                                label={
+                                                    timePeriod.charAt(0).toUpperCase() +
+                                                    timePeriod.slice(1)
+                                                }
+                                                className={styles.chipshead}
+                                            />
                                             {slots.map((slot, slotIndex) => (
                                                 <Chip
+                                                    className={`${styles.chips} ${selectedTime === slot ? styles.selected : ""
+                                                        }`}
                                                     key={slotIndex}
                                                     label={slot}
-                                                    variant={selectedTime === slot ? "filled" : "outlined"}
+                                                    variant={
+                                                        selectedTime === slot ? "filled" : "outlined"
+                                                    }
                                                     onClick={() => handleTimeClick(slot)}
                                                 />
                                             ))}
@@ -155,6 +178,7 @@ export default function BasicTabs({ onDateChange, onTimeChange, setSelectedTime,
 }
 
 BasicTabs.propTypes = {
-    onDateChange: PropTypes.func.isRequired,
-    onTimeChange: PropTypes.func.isRequired,
+    setSelectedDate: PropTypes.func.isRequired,
+    setSelectedTime: PropTypes.func.isRequired,
+    selectedTime: PropTypes.string,
 };

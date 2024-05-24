@@ -1,44 +1,74 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from './herosection1.module.css';
-import Button from '../button/Button';
-import doctor from '../../img/herosectionimg.png';
-import ambulance from '../../img/Ambulance.png';
-import doctorpng from '../../img/Doctor.png';
-import Drugstore from '../../img/Drugstore.png';
-import hospital from '../../img/Hospital.png';
-import capsul from '../../img/Capsule.png';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./herosection1.module.css";
+import Button from "../button/Button";
+import doctor from "../../img/herosectionimg.png";
+import ambulance from "../../img/Ambulance.png";
+import doctorpng from "../../img/Doctor.png";
+import Drugstore from "../../img/Drugstore.png";
+import hospital from "../../img/Hospital.png";
+import capsul from "../../img/Capsule.png";
+import axios from "axios";
+import { enqueueSnackbar } from "notistack";
+import Searchbar from "../search/searchbar";
 
 export default function Herosection1() {
     const navigate = useNavigate();
-    const [state, setState] = useState('');
-    const [city, setCity] = useState('');
+    const [state, setState] = useState("");
+    const [city, setCity] = useState("");
+    const [statesList, setStatesList] = useState([]);
+    const [citiesList, setCitiesList] = useState([]);
 
-    const handleSearchClick = () => {
+    async function getState() {
+        try {
+            const response = await axios.get(
+                `https://meddata-backend.onrender.com/states`
+            );
+            setStatesList(response.data);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    useEffect(() => {
+        getState();
+    }, []);
+
+    const handleStateChange = (e) => {
+        const selectedState = e.target.value;
+        setState(selectedState);
+
+        fetch(`https://meddata-backend.onrender.com/cities/${selectedState}`)
+            .then((response) => response.json())
+            .then((data) => setCitiesList(data))
+            .catch((error) => console.error("Error fetching cities:", error));
+    };
+
+    const handleSearchClick = (e) => {
+        e.preventDefault();
         if (state && city) {
             navigate(`/search?state=${state}&city=${city}`);
-        }
-        else {
-            alert('Please enter both state and city');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            enqueueSnackbar("Please enter both fields", { variant: "warning" });
         }
     };
 
     return (
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: "relative" }}>
             <div className={styles.Herosectiondiv}>
                 <div className={styles.leftsidediv}>
-                    <h2 style={{ margin: '0', color: '#102851' }}>
+                    <h2 style={{ margin: "0", color: "#102851" }}>
                         Skip the travel! Find Online
                     </h2>
-                    <h1 style={{ margin: '0', fontSize: '60px', fontWeight: '900' }}>
+                    <h1 style={{ margin: "0", fontSize: "60px", fontWeight: "900" }}>
                         Medical <span className={styles.centersword}>Centers</span>
                     </h1>
                     <p
                         style={{
-                            display: 'flex',
-                            textAlign: 'left',
-                            color: '#5C6169',
-                            marginTop: '0',
+                            display: "flex",
+                            textAlign: "left",
+                            color: "#5C6169",
+                            marginTop: "0",
                         }}
                     >
                         Connect instantly with a 24x7 specialist or choose to video visit a
@@ -51,26 +81,8 @@ export default function Herosection1() {
                 </div>
             </div>
             <div className={styles.card}>
-                <div className={styles.searchbar}>
-                    <input
-                        className={styles.search}
-                        type="text"
-                        placeholder="&#61442; state"
-                        value={state}
-                        onChange={(e) => setState(e.target.value)}
-                    />
-
-                    <input
-                        type="text"
-                        className={styles.search}
-                        placeholder="&#61442; city"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                    />
-
-                    <Button style="searchbtn" onClick={handleSearchClick}>Search</Button>
-                </div>
-                <h4 style={{ color: '#102851' }}>You may be looking for</h4>
+                <Searchbar />
+                <h4 style={{ color: "#102851", textAlign: "center" }}>You may be looking for</h4>
 
                 <div className={styles.iconsdiv}>
                     <div className={styles.icontextdiv}>
@@ -91,9 +103,7 @@ export default function Herosection1() {
                     </div>
                     <div className={styles.icontextdiv}>
                         <img src={ambulance} alt="img" className={styles.iconimg} />
-                        <span>
-                            Ambulance
-                        </span>
+                        <span>Ambulance</span>
                     </div>
                 </div>
             </div>

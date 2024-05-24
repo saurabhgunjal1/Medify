@@ -1,12 +1,13 @@
 .tabbox {
+  background: #ffffff !important;
   height: 270px;
-  width: 670px;
-  margin-left: 52px;
-  border: 1px solid rgb(55, 255, 0);
+  width: 55vw !important;
+  margin-left: 62px;
+  /* border: 1px solid rgb(55, 255, 0); */
 }
 .tabboxhed {
   height: 70px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 670px;
 
   margin-left: -1px;
@@ -26,7 +27,8 @@
 }
 
 .tabsheaddiv > h4 {
-  color: rgb(49, 49, 49);
+  color: #414146;
+
   margin: 0;
 }
 
@@ -34,6 +36,13 @@
   font-weight: 400;
   font-size: 12px;
   color: #01a400;
+}
+
+/**********/
+.tabsheaddiv.selected {
+  background-color: #508fd2;
+  border-radius: 5px;
+  border: 1px solid #0056b3;
 }
 
 .tappanelcolomndivtop {
@@ -56,15 +65,68 @@
   cursor: pointer;
 }
 
-/* .gridcontainer {
+.gridcontainer {
   margin-top: 0;
   padding-top: 0;
-  /* margin-bottom: 20px; */
-
+}
 .css-19kzrtu {
   padding: 0px !important;
 }
 
 .MuiBox-root {
   padding: 0px !important;
+}
+
+.gridcss {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 0px !important;
+  /* box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); */
+  background-color: #fff;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400 !important;
+  font-size: 8.875rem !important;
+  line-height: 1.43;
+  letter-spacing: 0.01071em !important;
+  padding: 12px !important;
+  text-align: center;
+  display: flex !important;
+  justify-content: space-between !important;
+  /* color: rgba(0, 0, 0, 0.6) ; */
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.chips {
+  width: 92px !important;
+  height: 30px !important;
+
+  border-radius: 3px !important;
+  border: 1px solid #2aa7ff !important;
+  color: #2aa7ff !important;
+  font-size: 13px !important;
+  text-align: center !important;
+  font-weight: 400 !important;
+  margin: 0px 8px 0px 8px !important;
+  cursor: pointer !important;
+}
+
+.chips.selected {
+  background-color: #9cccff;
+  border: 1px solid #0056b3;
+  color: #0056b3;
+}
+
+.chipshead {
+  /* border: 1px solid black; */
+  height: 30px !important;
+  width: 100px !important;
+  /* font-family: Lato; */
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  /* line-height: 19.6px; */
+  text-align: left !important;
+  color: #414146 !important;
 }
